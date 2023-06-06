@@ -106,7 +106,25 @@ function changePicture(data, link) {
   return elements;
 }
 // Requisito 10 - Crie um função que gera um relatório
-function generateReport() {}
+function generateReport(data) {
+  let informations = {
+    totalGuests: data.guests.length,
+    totalGender: counterGender(data),
+    avgAge: 0,
+    countries: [],
+  };
+  let sumAge = 0;
+  for (let i = 0; i < data.guests.length; i += 1) {
+    sumAge += data.guests[i].age;
+    let coutryCheck = data.guests[i].country;
+    if (!informations.countries.includes(coutryCheck)) {
+      informations.countries.push(coutryCheck);
+    }
+  }
+  informations.countries = informations.countries.sort();
+  informations.avgAge = Number.parseFloat((sumAge / informations.totalGuests).toFixed(2));
+  return informations;
+}
 // Não modifique as linhas abaixo
 module.exports = {
   splitSentence: typeof splitSentence === 'function' ? splitSentence : (() => {}),
