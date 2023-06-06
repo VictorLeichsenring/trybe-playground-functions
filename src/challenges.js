@@ -17,11 +17,11 @@ function footballPoints(wins, ties) {
 let playlist = [];
 function addMusics(artistName, musicName, musicTime) {
   let music = {
-      artist: artistName,
-      music: musicName,
-      musicTime: musicTime,
-    }
-  playlist.push(music)
+    artist: artistName,
+    music: musicName,
+    musicTime: musicTime,
+  };
+  playlist.push(music);
   return playlist;
 }
 // =================================================
@@ -29,23 +29,34 @@ function addMusics(artistName, musicName, musicTime) {
 // =================================================
 
 // Requisito 4 - Crie uma função que retorna o produto mais caro de acordo com uma categoria
-function moreExpensive(){}
+function moreExpensive(data, category) {
+  let moreExpesiveProductName = data[category][0].name;
+  let moreExpesiveProductPrice = data[category][0].price;
+  for (let i = 1; i < data[category].length; i += 1) {
+    if (data[category][i].price > moreExpesiveProductPrice) {
+      moreExpesiveProductName = data[category][i].name;
+      moreExpesiveProductPrice = data[category][i].price;
+    }
+  }
+  return `O produto mais caro é: ${moreExpesiveProductName
+  }, que custa: R$${moreExpesiveProductPrice.toFixed(2)}.`;
+}
 // Requisito 5 - Crie uma função que verifica se um determinado item já existe
-function checkItem(){}
+function checkItem() {}
 // Requisito 6 - Crie uma função que adiciona um novo item caso ele ainda não exista
-function addNewItem(){}
+function addNewItem() {}
 // Requisito 7 - Crie uma função que conta a quantidade de pessoas por gênero
-function counterGender(){}
+function counterGender() {}
 // =================================================
 // PARTE 3
 // =================================================
 
 // Requisito 8 - Crie uma função que retorna os elementos de um determinado estado
-function filterState(){}
+function filterState() {}
 // Requisito 9 - Crie uma função que altera a propriedade `picture`
-function changePicture(){}
+function changePicture() {}
 // Requisito 10 - Crie um função que gera um relatório
-function generateReport(){}
+function generateReport() {}
 // Não modifique as linhas abaixo
 module.exports = {
   splitSentence: typeof splitSentence === 'function' ? splitSentence : (() => {}),
