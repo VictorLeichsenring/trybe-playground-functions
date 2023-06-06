@@ -89,15 +89,22 @@ function counterGender(data) {
 // Requisito 8 - Crie uma função que retorna os elementos de um determinado estado
 function filterState(data, state) {
   let elemets = [];
-  for (let i = 0; i < data.guests.length; i += 1){
+  for (let i = 0; i < data.guests.length; i += 1) {
     if (data.guests[i].address.state === state) {
-      elemets.push(data.guests[i])
+      elemets.push(data.guests[i]);
     }
   }
-  return elemets
+  return elemets;
 }
 // Requisito 9 - Crie uma função que altera a propriedade `picture`
-function changePicture() {}
+function changePicture(data, link) {
+  let elements = [];
+  for (let i = 0; i < data.guests.length; i += 1) {
+    data.guests[i].picture = link;
+    elements.push(data.guests[i]);
+  }
+  return elements;
+}
 // Requisito 10 - Crie um função que gera um relatório
 function generateReport() {}
 // Não modifique as linhas abaixo
