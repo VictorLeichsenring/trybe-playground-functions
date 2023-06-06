@@ -42,7 +42,16 @@ function moreExpensive(data, category) {
   }, que custa: R$${moreExpesiveProductPrice.toFixed(2)}.`;
 }
 // Requisito 5 - Crie uma função que verifica se um determinado item já existe
-function checkItem() {}
+
+function checkItem(data, category, item) {
+  let productExist = false;
+  for (let i = 0; i < data[category].length; i += 1) {
+    if (data[category][i].name === item) {
+      productExist = true;
+    }
+  }
+  return productExist;
+}
 // Requisito 6 - Crie uma função que adiciona um novo item caso ele ainda não exista
 function addNewItem() {}
 // Requisito 7 - Crie uma função que conta a quantidade de pessoas por gênero
