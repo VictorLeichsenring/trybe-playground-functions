@@ -11,10 +11,19 @@ function splitSentence(phrase) {
 }
 // Requisito 2 - Crie uma função que calcula a quantidade de pontos em um campeonato de futebol
 function footballPoints(wins, ties) {
-  return (wins * 3) + (ties)
+  return (wins * 3) + (ties);
 }
 // Requisito 3 - Crie uma função que adiciona músicas em uma playlist
-function addMusics(){}
+let playlist = [];
+function addMusics(artistName, musicName, musicTime) {
+  let music = {
+      artist: artistName,
+      music: musicName,
+      musicTime: musicTime,
+    }
+  playlist.push(music)
+  return playlist;
+}
 // =================================================
 // PARTE 2
 // =================================================
